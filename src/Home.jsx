@@ -8,7 +8,7 @@ import { gsap } from "gsap";
 const Home = () =>{
 
     const [introDone, setIntroDone] = useState(false);
-
+    const [titreAffiche, setTitreAffiche] = useState('')
 
     useEffect(() => {
         const introTimer = setTimeout(() => {
