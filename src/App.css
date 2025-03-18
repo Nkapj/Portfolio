@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Nexstep';
+  src: url('/src/assets/NEXTSTEP.ttf') format('truetype');
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+

@@ -1,0 +1,165 @@
+
+.redVideo{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Nexstep';
+    width: 100%;
+    min-height: 80vh;
+    padding: 40px 0;
+    
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 600px;
+    width: 80%;
+    box-sizing: border-box;
+    padding-bottom: 40px;
+    min-height: 500px;
+
+
+}
+
+
+
+
+
+label {
+    font-size: 1rem;
+    color: rgb(214, 198, 198);
+    display: flex;
+    width: 110px;
+}
+
+
+.ligne {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 5px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.formCadre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 50rem; /* Ajuste la largeur */
+    min-height: 40rem; /* Plus grand pour englober tout */
+    background: rgba(20, 20, 20, 0.7); /* Fond semi-transparent */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+input, textarea {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    max-width: 600px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.8)
+
+}
+
+input::placeholder, textarea::placeholder{
+    font-size: 1rem;
+    
+}
+
+.input-group{
+    display: flex;
+    flex-direction: row;  
+    max-width: 100%; /* Ajuste la largeur */
+    ;
+    
+}
+.input-group input, input textarea {
+    max-width: 100%;
+    width: 100%; /* Ajuste la largeur à celle du parent */
+}
+
+
+.input-group input {
+    flex: 1;
+    
+    
+}
+
+.btn-submit {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    align-self: flex-end;
+    height: 50px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: white;
+    color: black;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    
+}
+
+.btn-submit:hover {
+    background: rgb(200, 200, 200);
+}
+
+
+
+
+@media (max-width: 768px) {
+    .title-contact h1 {
+        font-size: 2rem;
+    }
+
+    form {
+        width: 100%;
+        max-width: 80%;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    input, textarea {
+        font-size: 0.9rem;
+    }
+
+    .btn-submit {
+        font-size: 1rem;
+    }
+}
