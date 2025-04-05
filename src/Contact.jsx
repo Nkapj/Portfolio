@@ -1,5 +1,5 @@
 import "./Contact.css";
-import redsmoke from "./assets/redsmok.mp4";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 
 
@@ -10,61 +10,114 @@ import { Link } from 'react-router-dom';
 
 
 const Contact = () => {
+    
+        const [resultMessage, setResultMessage] = useState("");
+
+        const handleSubmit = async (e) => {
+                e.preventDefault();
+                const form = e.target;
+                const formData = new FormData(form);
+                const object = {};
+                formData.forEach((value, key) => {
+                    object[key] = value;
+            });
+
+        setResultMessage("Please wait...");
+
+        try {
+                const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json"
+                },
+                    body: JSON.stringify(object)
+                });
+
+                const json = await response.json();
+
+            if (response.status === 200) {
+                setResultMessage(json.message);
+            } else {
+                setResultMessage("Erreur : " + json.message);
+            }
+
+                form.reset();
+                setTimeout(() => setResultMessage(""), 5000);
+            } catch (error) {
+            console.error(error);
+            setResultMessage("Something went wrong!");
+            }
+};
+
+    
+    
+    
     return (
-
-        <div>  
+        <div className="monForm">  
             <div className="nav">
-                    <ul>
+                    <ul className="nav-links">
                         <li><Link to="/">Home</Link></li>
+                        <li><Link to="/Skills">Skills</Link></li>
                         <li><Link to="/projects">Projects</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
                     </ul>
-
+                    <div className="social-icons">
+                        <a href="https://www.linkedin.com/in/jessica-paule-nzi-kouame-aya/"><img src="/src/assets/linkedin.svg" alt="" /></a>
+                        <a href="https://github.com/Nkapj"><img src="/src/assets/github.svg" alt="" /></a>
+                        <a href="#"><img src="/src/assets/insta.svg" alt="" /></a>
+                    </div>
                 </div>
-                <div className="contact">
-        
-
             <video autoPlay loop muted className="redVideo">
-            <source src={redsmoke} type='video/mp4'/>
-            </video>
+                        <source src="https://videos.pexels.com/video-files/7565824/7565824-hd_2048_1080_25fps.mp4" type="video/mp4" />
+                </video>
 
+            <div className="contact">           
+                <div className="formCadre">
+                    <div className="formTitle">
             
-            <div className="formCadre">
-                <form action="contact" method="post">
-            
+                        <p>Fill up the form below to send me a message.</p>
+                    </div>
+                    <form onSubmit={handleSubmit} className="forma">
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+                        <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+                        <input type="checkbox" name="botcheck" style={{ display: "none" }} />
 
-                <div className="ligne input-group">
-                    <label htmlFor="name" >Votre nom</label>
-                    <input type="text" id="name"  name="name" placeholder="Nom" required/>
-                    <input type="text" id="surname" name="surname" placeholder="Prénom"/>
-                
+                        <div className="ligne double">
+                            <div className="input-group">
+                                <label htmlFor="first_name">First Name</label>
+                                <input type="text" id="first_name" name="name" placeholder="John" required />
+                            </div>
+                            <div className="input-group">
+                                <label htmlFor="lname">Last Name</label>
+                                <input type="text" id="lname" name="last_name" placeholder="Doe" required />
+                            </div>
+                        </div>
 
-            </div>
+                        <div className="ligne double">
+                            <div className="input-group">
+                                <label htmlFor="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="you@company.com" required />
+                            </div>
+                            <div className="input-group">
+                                <label htmlFor="phone">Phone</label>
+                                <input type="text" id="phone" name="phone" placeholder="+32 (0) 475 15 15 46 " required />
+                            </div>
+                        </div>
 
-            <div className="ligne">
-                <label htmlFor="email" >E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="Email" required />
-                    
-            </div>
+                        <div className="input-group">
+                                <label htmlFor="message">Message</label>
+                                <textarea rows="5" id="message" name="message" placeholder="Your message" required />
+                        </div>
 
-            <div className="ligne">
-                <label htmlFor="objet">Objet</label>
-                    <input type="text" id="objet" name="objet" placeholder="Object"/>
-                    
-            </div>
-            <div className="ligne">
-                <label htmlFor="message">Message</label>
-                <textarea id="message" name="message" rows="5" ptitle-contactlaceholder="Message" required></textarea>
-                
-            </div>
-
-            <button type="submit" className="btn-submit"> Soumettre</button>
-            </form> 
-        
-            </div>
-            
+                        <div className="input-group">
+                            <button type="submit" className="btn-submit">Send Message</button>
+                        </div>
+                        <p className="form-result">{resultMessage}</p>
+                    </form>
+                </div>
             </div>
         </div>
-
     );
 }
 

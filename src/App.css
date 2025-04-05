@@ -1,13 +1,90 @@
-@font-face {
+/* @font-face {
   font-family: 'Nexstep';
   src: url('/src/assets/NEXTSTEP.ttf') format('truetype');
+} */
+
+*{
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-body {
-  box-sizing: border-box;
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
+}
+
+body {
+  scrollbar-gutter: stable;
+}
+
+
+
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  z-index: 10; 
+
+
+}
+
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.social-icons {
+  position: absolute;
+  right: 2rem;
+  display: flex;
+  gap: 1rem;
+  
+}
+
+.nav-links a{
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding-bottom: 5px; /* espace pour l'underline */
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  transform: scaleX(1);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #e63946; /* couleur de l'underline */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+a img {
+  width: 30px;  /* ou rem, %, etc. */
+  height: auto;
+  
+  
 }
 
 
