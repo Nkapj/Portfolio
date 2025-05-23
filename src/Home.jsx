@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './Home.css';
 import fullpage from 'fullpage.js';
 import 'fullpage.js/dist/fullpage.css';
+import { NavLink } from 'react-router-dom';
+
 
 
 
@@ -53,7 +54,7 @@ const Home = () =>{
     useEffect(() => {
     
     
-        new fullpage('#fullpage', {
+        new fullpage('#homepage', {
             autoScrolling: true,
             navigation: true,
             anchors: ['home', 'languages', 'autre'],
@@ -80,21 +81,19 @@ const Home = () =>{
     
     return (
         
-        <div className='home-container' id ="fullpage">
-
-
+        <div className='home-container' id ="homepage">
 
             <div className="section home ">
                 <video autoPlay loop muted className="background-video">
-                <source src='https://videos.pexels.com/video-files/9694804/9694804-uhd_1440_2732_25fps.mp4' type='video/mp4'/>
+                <source src='https://videos.pexels.com/video-files/31425733/13405057_1920_1080_24fps.mp4' type='video/mp4'/>
                 </video>
 
                 <div className="nav">
                     <ul className="nav-links">
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/Skills">Skills</Link></li>
-                        <li><Link to="/projects">Projects</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
+                    <li><NavLink to="/" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Home</NavLink></li>
+                    <li><NavLink to="/Skills" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Skills</NavLink></li>
+                    <li><NavLink to="/projects" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Projects</NavLink></li>
+                    <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Contact</NavLink></li>
                     </ul>
                     <div className="social-icons">
                     
@@ -151,126 +150,46 @@ const Home = () =>{
 
 
 
-        <div className="section home ">
-        <video autoPlay loop muted >
-            <source src= 'https://videos.pexels.com/video-files/7670836/7670836-uhd_2560_1440_30fps.mp4'/>
-        </video>
 
-            <div className='languages'>
-                <h2>Languages & Tools</h2>
-                <p></p>
-                <div className="tag-list">
-                    <div className="loop-slider" style={{ "--duration": "18978ms", "--direction": "normal" }}>
-                    <div className="inner">
-                        <div className="tag"><span>#</span> CSS</div>
-                        <div className="tag"><span>#</span> Typescript</div>
-                        <div className="tag"><span>#</span> HTML</div>
-                        <div className="tag"><span>#</span> Tailwind</div>
-                        <div className="tag"><span>#</span> JavaScript</div>
-                        <div className="tag"><span>#</span> Sass</div>
-                        <div className="tag"><span>#</span> Bootstrap</div>
-                        <div className="tag"><span>#</span> React.js</div>
-                        <div className="tag"><span>#</span> Git</div>
-                        <div className="tag"><span>#</span> Github</div>
-                        <div className="tag"><span>#</span> Node.js</div>
-                        <div className="tag"><span>#</span> MongoDB</div>
-                        <div className="tag"><span>#</span> SQL</div>
-                        <div className="tag"><span>#</span> MySQL</div>
-                        <div className="tag"><span>#</span> API Rest</div>
-                        <div className="tag"><span>#</span> SEO</div>
-                        <div className="tag"><span>#</span> Auth</div>
-                        <div className="tag"><span>#</span> Next.js</div>
-                        <div className="tag"><span>#</span> Render</div>
 
-                    </div>
-                    </div>
-                    <div className="loop-slider" style={{ "--duration": "12467ms", "--direction": "reverse" }}>
-                    <div className="inner">
-                        <div className="tag"><span>#</span> CSS</div>
-                        <div className="tag"><span>#</span> Typescript</div>
-                        <div className="tag"><span>#</span> HTML</div>
-                        <div className="tag"><span>#</span> Tailwind</div>
-                        <div className="tag"><span>#</span> JavaScript</div>                   
-                        <div className="tag"><span>#</span> Sass</div>
-                        <div className="tag"><span>#</span> Bootstrap</div>
-                        <div className="tag"><span>#</span> React.js</div>
-                        <div className="tag"><span>#</span> Git</div>
-                        <div className="tag"><span>#</span> Github</div>
-                        <div className="tag"><span>#</span> Node.js</div>
-                        <div className="tag"><span>#</span> MongoDB</div>
-                        <div className="tag"><span>#</span> SQL</div>
-                        <div className="tag"><span>#</span> MySQL</div>
-                        <div className="tag"><span>#</span> API Rest</div>
-                        <div className="tag"><span>#</span> SEO</div>
-                        <div className="tag"><span>#</span> Auth</div>
-                        <div className="tag"><span>#</span> Render</div>
-                        <div className="tag"><span>#</span> Next.js</div>
 
-                    </div>
-                    </div>
-                    <div className="loop-slider" style={{ "--duration": "15621ms", "--direction": "normal" }}>
-                    <div className="inner">
-                        <div className="tag"><span>#</span> CSS</div>
-                        <div className="tag"><span>#</span> Typescript</div>
-                        <div className="tag"><span>#</span> HTML</div>
-                        <div className="tag"><span>#</span> Tailwind</div>
-                        <div className="tag"><span>#</span> JavaScript</div>                   
-                        <div className="tag"><span>#</span> Sass</div>
-                        <div className="tag"><span>#</span> Bootstrap</div>
-                        <div className="tag"><span>#</span> React.js</div>
-                        <div className="tag"><span>#</span> Git</div>
-                        <div className="tag"><span>#</span> Github</div>
-                        <div className="tag"><span>#</span> Node.js</div>
-                        <div className="tag"><span>#</span> MongoDB</div>
-                        <div className="tag"><span>#</span> SQL</div>
-                        <div className="tag"><span>#</span> MySQL</div>
-                        <div className="tag"><span>#</span> API Rest</div>
-                        <div className="tag"><span>#</span> SEO</div>
-                        <div className="tag"><span>#</span> Auth</div>
-                        <div className="tag"><span>#</span> Render</div>
-                        <div className="tag"><span>#</span> Next.js</div>
-                    </div>
-                    </div>
-                    <div className="loop-slider" style={{ "--duration": "10208ms", "--direction": "reverse" }}>
-                    <div className="inner">
-                        <div className="tag"><span>#</span> CSS</div>
-                        <div className="tag"><span>#</span> Typescript</div>
-                        <div className="tag"><span>#</span> HTML</div>
-                        <div className="tag"><span>#</span> Tailwind</div>
-                        <div className="tag"><span>#</span> JavaScript</div>                   
-                        <div className="tag"><span>#</span> Sass</div>
-                        <div className="tag"><span>#</span> Bootstrap</div>
-                        <div className="tag"><span>#</span> React.js</div>
-                        <div className="tag"><span>#</span> Git</div>
-                        <div className="tag"><span>#</span> Github</div>
-                        <div className="tag"><span>#</span> Node.js</div>
-                        <div className="tag"><span>#</span> MongoDB</div>
-                        <div className="tag"><span>#</span> SQL</div>
-                        <div className="tag"><span>#</span> MySQL</div>
-                        <div className="tag"><span>#</span> API Rest</div>
-                        <div className="tag"><span>#</span> SEO</div>
-                        <div className="tag"><span>#</span> Auth</div>
-                        <div className="tag"><span>#</span> Render</div>
-                        <div className="tag"><span>#</span> Next.js</div>
-
-                    </div>
-                    </div>
+        <div className= "section hom ">
+            <video autoPlay loop muted className="background-video">
+            <source src="https://videos.pexels.com/video-files/4812205/4812205-hd_1080_1920_30fps.mp4"/>
+            </video>
+            <div className='profil'>
+                <div className='fondG'>
+                    
                 </div>
+                <div className='photo-wrapper'>
+                    <img 
+                    src="/src/assets/profil.png" 
+                    alt="photo de profil"
+                    className='profilFoto'/>
+                </div>
+                <div className='profilBio'>
+                    <div className='bioWapper'>
+                        <h2>About me</h2>
+                        <p>
+                        Avant de me tourner vers le développement web, j’ai étudié le marketing, puis travaillé plusieurs années dans le secteur commercial et bancaire. <br /><br />
+                        Ces expériences m’ont permis de mieux comprendre le monde professionnel, de développer mon sens de l’analyse et de m’adapter à des environnements exigeants.
+                        En cherchant un domaine qui me stimule vraiment, j’ai découvert le code. <br />
+                        De mes premiers sites aux bases du design et du SEO, ma curiosité m’a poussée à intégrer en 2024 la formation intensive full-stack de BeCode.<br /><br />
+                        L’apprentissage y est basé sur l’autonomie, les projets concrets, et le travail en équipe. 
+                        J’ai pu progresser en relevant des défis techniques pour des partenaires comme Orange ou Elia.
+                        <br />Aujourd’hui, le développement web est bien plus qu’une compétence : <br /><br />
+                        c’est un domaine où j’aime apprendre, créer, comprendre et évoluer, je souhaite continuer à le faire à travers des projets concrets et utiles.
+                        </p>
+                        </div>
+                
+
+                </div>
+                
             </div>
 
-
-
-        </div>
-        <div className= "section home ">
-            <video autoPlay loop muted >
-            <source src="https://videos.pexels.com/video-files/7565825/7565825-hd_2048_1080_25fps.mp4"/>
-            </video>
-
-            <div className='onVerra'></div>
-
         </div>
 
-        </div>
+    </div>
         
         )
 }

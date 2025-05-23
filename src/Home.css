@@ -1,7 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 @font-face {
     font-family: 'Nexstep';
     src: url('/src/assets/NEXTSTEP.ttf') format('truetype');
 }
+
+
+/* *{
+    outline: 1px solid red;
+} */
 
 
 .home-container {
@@ -11,7 +20,7 @@
     
 }
 
-#fullpage {
+#homepage {
     scroll-behavior: auto !important;
     height: 100vh !important;
     width: 100vw !important;
@@ -19,14 +28,6 @@
 }
 
 
-
-
-.section {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-}
 
 .fp-watermark {
     display: none !important;
@@ -38,13 +39,8 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    
 }
-
-.home video {
+.background-video {
     position: absolute;
     top: 0;
     left: 0;
@@ -74,7 +70,7 @@
     align-items: center;
     text-align: center;
     width: 90%;
-    min-width: 50rem;
+    max-width: 50rem;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
     color: rgb(231, 224, 223);
@@ -96,8 +92,164 @@
     color: white;
     animation: blink 1s infinite ;
     
+}
+
+
+
+
+.profil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: auto; 
+    overflow: hidden;
+    flex-wrap: wrap;
+    
+}
+
+.section.hom{
+    background: linear-gradient(200deg, #5d5657 ,#544f53,#423837,#252838,#0b1127,#040c1b, #031426,#010b15,#000e1b);
+}
+
+.profil::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 90%;
+    background-image: url('/src/assets/profil.png'); /* chemin vers ton image */
+    background-size: cover;
+    background-position: center;
+    filter: blur(15px);
+    opacity: 0.4; /* pour que le texte reste lisible */
+    z-index: 0;
+}
+
+
+.fondG{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%; /* ou le même width que ta photo-wrapper */
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1); /* un peu plus visible */
+    backdrop-filter: blur(10px);               /* effet de flou */
+    -webkit-backdrop-filter: blur(10px);       /* support Safari */
+    border:  rgba(255, 255, 255, 0.2); /* léger contour */
+    z-index: 1;
 
 }
+
+
+
+
+.photo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    
+}
+
+
+
+img.profilFoto {
+    border-radius: 0% 50%;
+    max-width: 100%;
+    z-index: 1;
+    display: flex;
+    width: 500px;
+    height: 650px;
+    object-fit: cover; /* rogne proprement sans déformer */
+    object-position: center top;
+    background: linear-gradient(to right, #ebd4cb, #da9f93, #ba7316);
+    ;
+
+}
+
+
+.photo-wrapper,
+.profilBio{
+    flex: 1; /* Distribution égale de l'espace */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+
+.profilBio{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+    padding: 2rem;
+
+}
+
+
+
+
+
+
+.profilBio p {
+    color: rgb(254, 254, 254);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: left;
+    font-size: 20px;
+    padding: 2rem;
+    text-align: left;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: italic;
+    max-width: 600px;
+    
+    
+}
+
+.profilBio h2{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1rem;
+    color: #b94320;
+    font-family:'Great Vibes' ;
+    font-weight: 300 ;
+    font-size: 120px;
+    font-style: normal;
+    background: linear-gradient(to right,#ba7316, #da9f93,#ebd4cb);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @keyframes blink {
     50% { opacity: 0; }
@@ -133,7 +285,7 @@ svg text {
 .intro {
     animation: fill 0.3s ease forwards 3.5s;
     width: 100%;
-    min-width: 65rem;
+    max-width: 65rem;
 
 
 }
@@ -307,142 +459,6 @@ svg text {
 }
 
 
-.languages{
-    min-width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.languages h2 {
-    font-size: 4rem;
-    color: #a79c61;
-    margin: 50px;
-}
-
-.tag-list {
-    width: 100%;
-    max-width: 65em;
-    display: flex;
-    flex-shrink: 0;
-    flex-direction: column;
-    gap: 2rem 0;
-    position: relative;
-    padding: 1.5rem 0;
-    overflow: hidden;
-}
-
-.loop-slider .inner {
-    display: flex;
-    width: fit-content;
-    animation-name: loop;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: var(--direction);
-    animation-duration: var(--duration);
-    width: 100%;
-    min-height: 100%;
-    
-
-}
-
-
-.tag:nth-child(6n+1) { background-color: #9e8c33; }
-.tag:nth-child(6n+2) { background-color: #c1ab3e; }
-.tag:nth-child(6n+3) { background-color: #ccba61; }
-.tag:nth-child(6n+4) { background-color: #d7c984; }
-.tag:nth-child(6n+5) { background-color: #e2d8a7; }
-.tag:nth-child(6n+6) { background-color: #f0ebd1; color: black; }
-
-
-.tag {
-    display: flex;
-    align-items: center;
-    gap: 0 0.2rem;
-    font-size: 0.9rem;
-    border-radius: 0.4rem;
-    padding: 0.7rem 1rem;
-    margin-right: 1rem;
-    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2), 0 0.1rem 0.5rem rgba(0, 0, 0, 0.3), 0 0.2rem 1.5rem rgba(0, 0, 0, 0.4);
-    color: white;
-    font-weight: 800;
-    
-}
-.tag span {
-    font-size: 1.2rem;
-    color: #fff;
-    
-}
-
-/* .fade {
-    pointer-events: none;
-    background: linear-gradient(
-        95deg,
-        #9b929c,
-        rgba(173, 7, 192, 0) 30%,
-        rgba(155,146,156,0) 70%,
-        #9b929c
-    );
-    position: absolute;
-    inset: 0;;
-} */
-
-@keyframes loop {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -552,7 +568,7 @@ svg text {
     text-align: center;
 }
     
-
+ 
     .intro {
     min-width: 40rem;
     width: 90%;

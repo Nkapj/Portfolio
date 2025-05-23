@@ -1,6 +1,7 @@
 import "./Contact.css";
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -57,10 +58,10 @@ const Contact = () => {
         <div className="monForm">  
             <div className="nav">
                     <ul className="nav-links">
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/Skills">Skills</Link></li>
-                        <li><Link to="/projects">Projects</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
+                    <li><NavLink to="/" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Home</NavLink></li>
+                    <li><NavLink to="/Skills" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Skills</NavLink></li>
+                    <li><NavLink to="/projects" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Projects</NavLink></li>
+                    <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Contact</NavLink></li>               
                     </ul>
                     <div className="social-icons">
                         <a href="https://www.linkedin.com/in/jessica-paule-nzi-kouame-aya/"><img src="/src/assets/linkedin.svg" alt="" /></a>
